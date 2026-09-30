@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { UserProvider } from './context/UserContext';
 import { OrangeredBackground } from './components/OrangeredBackground';
 import { Navbar } from './components/Navbar';
@@ -107,6 +108,7 @@ export function App() {
   return (
     <UserProvider>
       <AppContent />
+      <Analytics />
     </UserProvider>
   );
 }
