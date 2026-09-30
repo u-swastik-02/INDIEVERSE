@@ -1,0 +1,147 @@
+/* App Layout & Component Styles - Orange & White Professional Edition */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #FAFBFC;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Toast Notification in Orange & White */
+.xp-toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #FF6600 0%, #FF3D00 100%);
+  color: #FFFFFF;
+  border-radius: 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 30px rgba(255, 85, 0, 0.4), 0 0 15px rgba(255, 85, 0, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  animation: slideUpToast 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUpToast {
+  from {
+    transform: translateY(30px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* State Selector Pill & Modal Animations */
+.state-selector-pill {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.state-selector-pill:hover {
+  transform: translateY(-1px);
+}
+
+.pulse-green {
+  animation: pulseGreenDot 1.6s infinite;
+}
+
+@keyframes pulseGreenDot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpModal {
+  from {
+    transform: translateY(20px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shakeWarning {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* Dish Card Food Photography & Rating Styles */
+.card-hover-crazy:hover .dish-card-img {
+  transform: scale(1.08);
+}
+
+.star-btn-hover {
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.star-btn-hover:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 2px 6px rgba(234, 179, 8, 0.6));
+}
+
+.food-rank-gold {
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.45);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-subtitle {
+    display: none !important;
+  }
+  .state-selector-pill {
+    padding: 5px 10px !important;
+    gap: 6px !important;
+  }
+  .xp-toast {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    justify-content: center;
+  }
+}
